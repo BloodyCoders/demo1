@@ -1,0 +1,65 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+h3 , h1 , p , a{
+    color: black;
+  
+
+    margin: 2%;
+}
+
+#help{
+    background-color: black;
+    color: white;
+}
+
+.upvote + button {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: brown;
+}
+
+div > input{
+    background-color: hotpink;
+}
+
+h3{
+    font-size: normal;
+}
+p{
+    font-size: larger;
+}
+
+p a{
+    background-color: aqua;
+}
+
+p + h3 {
+    background-color: blue;
+}
+
+input[type="text"]{
+    color: red;
+}
+
+input[type="password"]{
+    color:green;
+}
+
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+button:active{
+    background-color: pink;
+}
+input[type="radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+}
+
+div:nth-of-type(2n){
+    background-color: orange;
+}

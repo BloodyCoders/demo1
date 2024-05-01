@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejas Information</title>
+  <link rel="stylesheet" href="info.css">
+</head>
+<body>
+  <section>
+    <h1 id="span"><em>Student Information</em></h1>
+    <div class="info">
+      <h4><em>Name:</em> Tejas Bhangale</h4>
+      <h4><em>Dept.:</em> Information Technology</h4>
+    </div>
+    <h1 id="academicsTitle"><i><b>Academics:</b></i></h1>
+    <div id="semestersMenu">
+      <button onclick="showSemester('Sem-1')">Semester 1</button>
+      <button onclick="showSemester('Sem-2')">Semester 2</button>
+      <!-- ... Add buttons for other semesters ... -->
+    </div>
+    <table id="academicsTable">
+      <!-- Content for each semester will be dynamically added here -->
+    </table>
+    <h1 id="certificationTitle"><b><i>Certification:</i></b></h1>
+    <a href="https://www.google.com" target="_blank" id="certificateLink">Certificate</a>
+  </section>
+  <script src="info.js" defer></script>
+</body>
+</html>

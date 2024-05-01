@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <script>
+        function appendValue(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculateResult() {
+            try {
+                var result = eval(document.getElementById("display").value);
+                document.getElementById("display").value = result;
+            } catch (e) {
+                document.getElementById("display").value = "Error";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 20px;">
+        <h2>Calculator</h2>
+        <input type="text" id="display" style="width: 100%; padding: 10px; font-size: 18px;" readonly />
+        <div style="margin-top: 10px;">
+            <button onclick="appendValue('7')" style="padding: 10px;">7</button>
+            <button onclick="appendValue('8')" style="padding: 10px;">8</button>
+            <button onclick="appendValue('9')" style="padding: 10px;">9</button>
+            <button onclick="appendValue('/')" style="padding: 10px;">/</button>
+        </div>
+        <div>
+            <button onclick="appendValue('4')" style="padding: 10px;">4</button>
+            <button onclick="appendValue('5')" style="padding: 10px;">5</button>
+            <button onclick="appendValue('6')" style="padding: 10px;">6</button>
+            <button onclick="appendValue('*')" style="padding: 10px;">*</button>
+        </div>
+        <div>
+            <button onclick="appendValue('1')" style="padding: 10px;">1</button>
+            <button onclick="appendValue('2')" style="padding: 10px;">2</button>
+            <button onclick="appendValue('3')" style="padding: 10px;">3</button>
+            <button onclick="appendValue('-')" style="padding: 10px;">-</button>
+        </div>
+        <div>
+            <button onclick="clearDisplay()" style="padding: 10px;">C</button>
+            <button onclick="appendValue('0')" style="padding: 10px;">0</button>
+            <button onclick="calculateResult()" style="padding: 10px;">=</button>
+            <button onclick="appendValue('+')" style="padding: 10px;">+</button>
+        </div>
+    </div>
+</body>
+</html>

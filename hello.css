@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f3ef1d; /* yellow color */
+    padding: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  #navbar a {
+    color: #f00e0e; /* red color */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    font-family: 'Open Sans', sans-serif; /* Different font */
+  }
+  
+  #navbar a:hover {
+    color: #3ce73c; /* green color on hover */
+  }
+  
+  #content {
+    height: 1000px;
+    background-color: #ecf0f1; /* Light grey background */
+    padding: 20px;
+  }
+  

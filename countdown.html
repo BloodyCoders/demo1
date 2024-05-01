@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #timer {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <script>
+        let timer;
+        let startTime;
+        let endTime;
+
+        function startTimer() {
+            const inputTime = prompt('Enter the time in seconds:');
+            const timeInSeconds = parseInt(inputTime, 10);
+
+            if (!isNaN(timeInSeconds) && timeInSeconds > 0) {
+                startTime = new Date().getTime();
+                endTime = startTime + timeInSeconds * 1000;
+                updateTimer();
+
+                timer = setInterval(updateTimer, 1000);
+            } else {
+                alert('Please enter a valid positive number for the time.');
+            }
+        }
+
+        function updateTimer() {
+            const currentTime = new Date().getTime();
+            const remainingTime = Math.max(0, endTime - currentTime);
+
+            const hours = Math.floor(remainingTime / 3600000);
+            const minutes = Math.floor((remainingTime % 3600000) / 60000);
+            const seconds = Math.floor((remainingTime % 60000) / 1000);
+
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+
+            if (remainingTime === 0) {
+                clearInterval(timer);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            document.getElementById('timer').textContent = '00:00:00';
+        }
+
+        function formatTime(value) {
+            return value < 10 ? '0' + value : value;
+        }
+    </script>
+</body>
+</html>
